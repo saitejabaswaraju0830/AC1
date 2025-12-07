@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mubarak Service Experts | AC & Home Appliance Repair in Warangal</title>
+    <meta name="description" content="Mubarak Service Experts - Expert repair for AC, Washing Machine, Refrigerator, Microwave, Geyser in Warangal. Call Shaik Abdul Salam: 85559 48572 / 87129 44996">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <style>
+        :root {
+            --green: #27ae60;
+            --dark-green: #1a8b4b;
+            --orange: #e67e22;
+            --dark: #1e272e;
+            --light: #f8f9fa;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+        body { font-family:'Poppins',sans-serif; color:#333; line-height:1.7; overflow-x:hidden; padding-top: 0%; }
+        img { max-width:100%; display:block; }
+        a { text-decoration:none; }
+        .container { width:92%; max-width:1200px; margin:auto; }
+        .flex { display:flex; align-items:center; justify-content:space-between; }
+
+        /* Top Bar */
+        .top-bar {
+            background:linear-gradient(135deg, var(--dark-green), #2c6b4a);
+            color:#fff; padding:0px 0; margin-bottom: 0%; font-size:15px; font-weight:600;
+        }
+        .top-bar i { margin-right:8px; color:#fff; }
+
+        /* Header */
+        header {
+            background:#fff; box-shadow:0 5px 25px rgba(0,0,0,0.12); position:fixed; width:100%; top:0; z-index:1000;
+            padding:0px; transition:0.4s; margin-top: 0%;
+        }
+        .logo-area {
+            display:flex; align-items:center; gap:18px;
+        }
+        .logo-area img { height:70px; border-radius:50%; border:3px solid var(--green); }
+        .logo-area h1 {
+            font-size:2rem; color:var(--dark-green); font-weight:800; margin:0;
+        }
+        .logo-area span {
+            display:block; font-size:0.95rem; color:var(--orange); font-weight:600; letter-spacing:1px;
+        }
+        nav ul {
+            display:flex; gap:38px;
+        }
+        nav ul li a {
+            color:#222; font-weight:700; font-size:1.05rem; text-transform:uppercase;
+            padding:12px 0; position:relative; transition:0.4s;
+        }
+        nav ul li a:hover { color:var(--green); }
+        nav ul li a::after {
+            content:''; position:absolute; width:0; height:4px; background:var(--green);
+            bottom:0; left:50%; transform:translateX(-50%); transition:0.4s; border-radius:3px;
+        }
+        nav ul li a:hover::after { width:100%; }
+        .menu-toggle { display:none; font-size:2rem; cursor:pointer; color:var(--dark-green); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.78)), url('BACK.jpg') center/cover no-repeat;
+            color:#fff; text-align:center; padding:320px 20px 180px; margin-top:100px;
+        }
+        .hero h1 {
+            font-size:4rem; margin-bottom:20px; font-weight:900; text-shadow:0 5px 15px rgba(0,0,0,0.7);
+        }
+        .hero p {
+            font-size:1.5rem; max-width:1000px; margin:auto; opacity:0.95; margin-bottom:40px;
+        }
+        .btn {
+            display:inline-block; background:var(--green); color:#fff; padding:18px 52px;
+            border-radius:50px; font-weight:700; font-size:1.3rem; margin:15px;
+            box-shadow:0 15px 40px rgba(39,174,96,0.5); transition:0.5s;
+        }
+        .btn:hover {
+            transform:translateY(-10px); background:#219653; box-shadow:0 25px 60px rgba(39,174,96,0.7);
+        }
+        .btn.whatsapp { background:#25d366; }
+        .btn.whatsapp:hover { background:#128C7E; }
+
+        section { padding:110px 0; }
+        h2 {
+            text-align:center; font-size:3rem; margin-bottom:80px; font-weight:800; color:#222;
+            position:relative;
+        }
+        h2::after {
+            content:''; width:120px; height:6px; background:var(--green); position:absolute;
+            bottom:-25px; left:50%; transform:translateX(-50%); border-radius:5px;
+        }
+
+        /* Brands */
+        .brands { background:#ffffff; text-align:center; }
+        .brand-logos {
+            display:flex; flex-wrap:wrap; justify-content:center; gap:45px; align-items:center;
+            max-width:1100px; margin:auto;
+        }
+        .brand-logos img {
+            height:75px; filter:grayscale(30%); transition:0.5s; opacity:0.85;
+        }
+        .brand-logos img:hover {
+            filter:grayscale(0); transform:scale(1.2); opacity:1;
+        }
+
+        /* Services */
+        .services-grid {
+            display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:40px;
+        }
+        .service-card {
+            background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 18px 45px rgba(0,0,0,0.12);
+            text-align:center; transition:0.5s; border:2px solid transparent;
+        }
+        .service-card:hover {
+            transform:translateY(-22px); box-shadow:0 35px 70px rgba(0,0,0,0.2);
+            border-color:var(--green);
+        }
+        .service-card img {
+            height:260px; width:100%; object-fit:cover; transition:0.5s;
+        }
+        .service-card:hover img { transform:scale(1.1); }
+        .service-card h3 {
+            padding:28px 15px 12px; font-size:1.55rem; font-weight:700; color:#222;
+        }
+        .service-card p {
+            padding:0 25px 30px; color:#555; font-size:1.05rem;
+        }
+        .service-card .btn {
+            margin-bottom:30px; padding:15px 45px; font-size:1.1rem;
+        }
+
+        /* Process */
+        .process { background:linear-gradient(to bottom,#ffffff,#f0f7f4); }
+        .process-container {
+            display:flex; justify-content:center; gap:60px; flex-wrap:wrap; position:relative;
+        }
+        .process-container::before {
+            content:''; position:absolute; top:60px; left:15%; right:15%; height:6px;
+            background:linear-gradient(to right, var(--green), #95d6b0); z-index:0; border-radius:10px;
+        }
+        .process-step {
+            flex:1; min-width:280px; text-align:center; position:relative; z-index:1;
+        }
+        .process-circle {
+            width:130px; height:130px; background:var(--green); color:#fff; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; font-size:3.5rem; font-weight:900;
+            margin:0 auto 35px; box-shadow:0 20px 50px rgba(39,174,96,0.4); transition:0.5s;
+        }
+        .process-step:hover .process-circle {
+            transform:scale(1.2); background:#219653;
+        }
+
+        /* Counters */
+        .counters {
+            background:var(--dark); color:#fff; padding:90px 0; text-align:center;
+        }
+        .counter-grid {
+            display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:50px;
+        }
+        .counter-box h3 {
+            font-size:3.8rem; color:var(--green); font-weight:800;
+        }
+        .counter-box p {
+            font-size:1.4rem; font-weight:600; margin-top:10px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background:linear-gradient(135deg,#1e5799,#2989d8);
+            color:#fff; position:relative;
+        }
+        .testimonials::before {
+            content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+            background:rgba(0,0,0,0.3);
+        }
+        .testimonials .container { position:relative; z-index:2; }
+        .testimonials h2 { color:#fff; }
+        .testimonial-slider .item {
+            background:rgba(255,255,255,0.98); color:#333; padding:50px 40px;
+            margin:25px; border-radius:25px; box-shadow:0 25px 60px rgba(0,0,0,0.3);
+            text-align:center; transition:0.5s;
+        }
+        .testimonial-slider .item:hover {
+            transform:translateY(-15px);
+        }
+        .testimonial-slider .item i {
+            font-size:60px; color:var(--green); margin-bottom:25px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background:#f8f9fa;
+        }
+        .contact-info {
+            text-align:center; max-width:800px; margin:auto;
+        }
+        .contact-info p {
+            font-size:1.3rem; margin:25px 0; font-weight:500;
+        }
+        .contact-info .btn {
+            font-size:1.5rem; padding:20px 60px;
+        }
+
+        /* Footer */
+        footer {
+            background:var(--dark); color:#ddd; padding:100px 0 40px;
+        }
+        .footer-grid {
+            display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:60px;
+        }
+        footer h3 {
+            color:var(--green); font-size:1.8rem; margin-bottom:25px;
+        }
+        footer h4 {
+            color:var(--orange); margin-bottom:20px;
+        }
+
+        /* Floating Buttons */
+        .float-btn {
+            position:fixed; bottom:30px; padding:18px 38px; border-radius:60px; color:#fff;
+            font-weight:800; font-size:1.15rem; box-shadow:0 15px 40px rgba(0,0,0,0.5);
+            z-index:9999; transition:0.5s; display:flex; align-items:center; gap:16px;
+        }
+        .float-btn:hover {
+            transform:translateY(-12px) scale(1.15);
+        }
+        .whatsapp { left:20px; background:#25d366; }
+        .call { right:20px; background:#e74c3c; }
+
+        @media (max-width:992px) {
+            .process-container::before { display:none; }
+            nav ul { 
+                position:fixed; top:95px; left:0; right:0; background:#fff; flex-direction:column;
+                max-height:0; overflow:hidden; transition:0.6s; box-shadow:0 20px 40px rgba(0,0,0,0.2);
+            }
+            nav ul.active { max-height:600px; padding:40px 0; }
+            .menu-toggle { display:block; }
+            .hero h1 { font-size:2.8rem; }
+            .hero p { font-size:1.2rem; }
+        }
+
+        /* ADD THIS CSS - FIXES THE GAP ISSUE COMPLETELY */
+header {
+    padding: 8px 0 !important;   /* Reduce unwanted padding */
+}
+
+#header {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+body {
+    padding-top: 0 !important;   /* Removes any body top padding */
+    margin-top: 0 !important;
+}
+
+.hero {
+    margin-top: 0 !important;    /* Critical: Removes the 100px gap */
+    padding-top: 180px !important;   /* Adjust this value as needed (you can increase if you want more space from top) */
+    padding-bottom: 180px !important;
+}
+
+/* Optional: Fine-tune header when scrolled */
+header.scrolled {
+    padding: 5px 0 !important;
+}
+
+/* ADD THIS CSS TO YOUR <style> TAG */
+
+/* Make hero take full screen height */
+.hero {
+    height: 100vh;                    /* Full viewport height */
+    min-height: 100vh;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('BACK.jpg') center/cover no-repeat fixed;
+}
+
+/* Hero content styling */
+.hero .container {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 5.5rem !important;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-shadow: 0 8px 20px rgba(0,0,0,0.8);
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.8rem !important;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* Call & WhatsApp buttons in hero */
+.hero .btn {
+    display: inline-block;
+    padding: 20px 60px;
+    font-size: 1.5rem;
+    margin: 15px;
+    border-radius: 60px;
+    font-weight: 800;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: all 0.4s;
+}
+
+.hero .btn:hover {
+    transform: translateY(-12px) scale(1.08);
+}
+
+/* Hide all sections below hero initially */
+#about, #brands, #services, .process, .counters, .testimonials, .contact, footer {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.2s ease-out;
+}
+
+/* Show sections when they come into view while scrolling */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Optional: Smooth reveal effect */
+section {
+    padding: 120px 0;
+}
+
+/* ===== ULTIMATE MOBILE-FRIENDLY HERO FIX ===== */
+.hero {
+    min-height: 100vh;
+    min-height: 100dvh;                    /* This is the key for modern mobiles */
+    height: auto;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), 
+                url('BACK.jpg') center/cover no-repeat fixed;
+    background-attachment: fixed;          /* Looks premium */
+    text-align: center;
+}
+
+/* Extra safety for older devices */
+@supports not (height: 100dvh) {
+    .hero {
+        min-height: 100vh;
+    }
+}
+
+/* Adjust padding so content isn't hidden behind fixed header */
+.hero .container {
+    padding-top: 120px;        /* Clears the fixed header */
+    padding-bottom: 80px;
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .hero .container {
+        padding-top: 100px;     /* Less space needed on mobile */
+    }
+    
+    .hero h1 {
+        font-size: 3.2rem !important;
+        line-height: 1.1;
+    }
+    
+    .hero p {
+        font-size: 1.3rem !important;
+    }
+    
+    .hero .btn {
+        padding: 16px 40px !important;
+        font-size: 1.3rem !important;
+        display: block;
+        width: fit-content;
+        margin: 15px auto;
+    }
+}
+/* ============= REMOVE GREEN LINE UNDER ALL HEADINGS ============= */
+h2 {
+    position: relative;
+    padding-bottom: 0 !important;
+}
+
+h2::after {
+    display: none !important;        /* This completely removes the green line */
+}
+
+/* Alternative (if you want to keep the pseudo-element for future use but hide it) */
+h2::after {
+    content: none;
+}
+
+/* ===== PERFECT CIRCULAR FLOATING BUTTONS ===== */
+.float-btn {
+    position: fixed;
+    bottom: 25px;
+    width: 60px;           /* Fixed width */
+    height: 60px;          /* Fixed height = perfect circle */
+    border-radius: 50%;    /* Makes it fully circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;     /* Icon size */
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: all 0.4s ease;
+    text-align: center;
+    line-height: 1;
+    backdrop-filter: blur(10px);
+}
+
+/* Remove the old padding & text spacing */
+.float-btn:hover {
+    transform: translateY(-8px) scale(1.1) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* WhatsApp Button - Left */
+.float-btn.whatsapp {
+    left: 20px;
+    background: #25d366;
+}
+
+/* Call Button - Right */
+.float-btn.call {
+    right: 20px;
+    background: #e74c3c;
+}
+
+/* Pulse animation for extra attention (optional but looks pro) */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.float-btn.whatsapp {
+    animation: pulse 2s infinite;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container flex">
+        <div>
+            <i class="fas fa-phone"></i> 85559 48572 &nbsp;&nbsp;|&nbsp;&nbsp; 87129 44996
+            &nbsp;&nbsp;|&nbsp;&nbsp; H.No. 15-1-17/1, Industrial Estate, Mulugu Road, Warangal
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header id="header">
+    <div class="container flex">
+        <div class="logo-area">
+            <img src="logo.jpg" alt="Mubarak Service Experts">
+            <div>
+                <h1>MUBARAK SERVICE EXPERTS</h1>
+                <span>Shaik Abdul Salam</span>
+            </div>
+        </div>
+        <nav>
+            <div class="menu-toggle" onclick="document.getElementById('nav-menu').classList.toggle('active')">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#brands">Brands</a></li>
+                <li><a href="#services">Services</a></li>
+                
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="container">
+        <h1>MUBARAK SERVICE EXPERTS</h1>
+        <p>Professional AC Installation & Repair | Washing Machine | Refrigerator | Microwave | Geyser Service in Warangal</p>
+       
+    </div>
+</section>
+
+<!-- About -->
+<section id="about">
+    <div class="container" style="text-align:center; padding:80px 20px;">
+        <h2>About Us</h2>
+        <p style="font-size:1.3rem; max-width:900px; margin:auto; line-height:2;">
+            With <strong>15+ years of experience</strong>, Mubarak Service Experts, led by <strong>Shaik Abdul Salam</strong>, 
+            provides fast, reliable, and affordable repair services for all home appliances in Warangal. 
+            We use only genuine spare parts and offer 24x7 emergency support.
+        </p>
+    </div>
+</section>
+
+    <section class="brands" id="brands">
+    <div class="container">
+        <h2>Brands We Service & Repair</h2>
+        <div class="brand-logos">
+            <img src="WHIRLPOOL.jpg" alt="Whirlpool">
+            <img src="LG.jpg" alt="LG">
+            <img src="SAMSUNG.png" alt="Samsung">
+            <img src="VOLTAS.png" alt="Voltas">
+            <img src="DAIKIN.png" alt="Daikin">
+            <img src="O.png" alt="O">
+            <img src="IFB.png" alt="IFB">
+            <img src="BLUESTAR.png" alt="Bluestar">
+            <img src="VIDEOCON.jpg" alt="Videocon">
+
+            <img src="BOSCH.png" alt="Bosch">
+            <img src="Haier.png" alt="Haier">
+            <img src="Godrej.jpg" alt="Godrej">
+            <img src="Panasonic.png" alt="Panasonic">
+            <img src="Lloyd.jpg" alt="Lloyd">
+            <img src="Midea.jpg" alt="Midea">
+            <img src="Hitachi.png" alt="Hitachi">
+            <img src="Carrier.jpg" alt="Carrier">
+            <img src="Toshiba.png" alt="Toshiba">
+            <img src="Electrolux.jpg" alt="Electrolux">
+            <img src="Sharp.png" alt="Sharp">
+            <img src="Onida.png" alt="Onida">
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <div class="container">
+        <h2>Our Professional Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="WASH.jpg" alt="Washing Machine Repair">
+                <h3>Washing Machine Repair</h3>
+                <p>All brands - Front Load, Top Load, Semi-Automatic</p>
+                <a href="tel:8712944996" class="btn">Call Now</a>
+            </div>
+            <div class="service-card">
+                <img src="REFG.jpg" alt="Refrigerator Repair">
+                <h3>Refrigerator Repair</h3>
+                <p>Gas filling, cooling issues, compressor replacement</p>
+                <a href="tel:8712944996" class="btn">Call Now</a>
+            </div>
+            <div class="service-card">
+                <img src="OVEN.jpg" alt="Microwave Oven Repair">
+                <h3>Microwave Oven Repair</h3>
+                <p>Heating issues, display problems, turntable repair</p>
+                <a href="tel:8712944996" class="btn">Call Now</a>
+            </div>
+            <div class="service-card">
+                <img src="AC.jpg" alt="AC Installation & Repair">
+                <h3>AC Installation & Repair</h3>
+                <p>Split/Window AC - Gas charging, installation, servicing</p>
+                <a href="tel:8712944996" class="btn">Call Now</a>
+            </div>
+            <div class="service-card">
+                <img src="GESER.jpg" alt="Geyser Repair">
+                <h3>Geyser & Water Heater Repair</h3>
+                <p>All types of electric & gas geysers repaired</p>
+                <a href="tel:8712944996" class="btn">Call Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+    <div class="container">
+        <h2>How We Work</h2>
+        <div class="process-container">
+            <div class="process-step">
+                <div class="process-circle">1</div>
+                <h4>Call or WhatsApp</h4>
+                <p>Share your appliance problem</p>
+            </div>
+            <div class="process-step">
+                <div class="process-circle">2</div>
+                <h4>Quick Visit</h4>
+                <p>Expert technician reaches fast</p>
+            </div>
+            <div class="process-step">
+                <div class="process-circle">3</div>
+                <h4>Problem Fixed</h4>
+                <p>100% satisfaction guaranteed</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Counters -->
+<section class="counters">
+    <div class="container">
+        <div class="counter-grid">
+            <div class="counter-box"><h3>15+</h3><p>Years Experience</p></div>
+            <div class="counter-box"><h3>5000+</h3><p>Happy Customers</p></div>
+            <div class="counter-box"><h3>24x7</h3><p>Emergency Service</p></div>
+            <div class="counter-box"><h3>100%</h3><p>Genuine Parts</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials - DOTS REMOVED -->
+<section class="testimonials">
+    <div class="container">
+        <h2>Customer Reviews</h2>
+        <div class="testimonial-slider">
+            <div class="item"><i class="fas fa-quote-left"></i><p>Best service in Warangal! Fixed my AC in 1 hour. Highly recommended!</p><strong>– Srinivas Reddy</strong></div>
+            <div class="item"><i class="fas fa-quote-left"></i><p>Very honest and professional. Charges are reasonable.</p><strong>– Priyanka Sharma</strong></div>
+            <div class="item"><i class="fas fa-quote-left"></i><p>Quick response and excellent washing machine repair. Thank you Mubarak bhai!</p><strong>– Mohammed Ahmed</strong></div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="container contact-info">
+        <h2>Contact Us Anytime</h2>
+        <p><i class="fas fa-phone"></i> <strong>Call:</strong> <a href="tel:8555948572">85559 48572</a> | <a href="tel:8712944996">87129 44996</a></p>
+        <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/918555948572" target="_blank">87129 44996</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> H.No. 15-1-17/1, Industrial Estate, Mulugu Road, Warangal</p>
+        
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <h3>MUBARAK SERVICE EXPERTS</h3>
+            <p><strong>Shaik Abdul Salam</strong><br>Expert in AC Installation & All Home Appliance Repair<br>Trusted Service in Warangal Since 15+ Years</p>
+        </div>
+        <div>
+            <h4>Quick Contact</h4>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>H.No. 15-1-17/1,<br>Industrial Estate, Mulugu Road,<br>Warangal, Telangana</strong></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:8555948572" style="color:#ddd;">85559 48572</a><br>
+               <i class="fas fa-phone"></i> <a href="tel:8712944996" style="color:#ddd;">87129 44996</a></p>
+        </div>
+        <div>
+            <h4>Our Services</h4>
+            <ul style="list-style:none; line-height:2.2;">
+                <li>AC Installation & Repair</li>
+                <li>Washing Machine Repair</li>
+                <li>Refrigerator Repair</li>
+                <li>Microwave Oven Repair</li>
+                <li>Geyser Repair</li>
+            </ul>
+        </div>
+    </div>
+    <div style="text-align:center; padding-top:30px; border-top:1px solid #444; color:#aaa;">
+        © 2025 Mubarak Service Experts Warangal • All Rights Reserved
+    </div>
+</footer>
+
+<!-- Floating Circular WhatsApp & Call Buttons -->
+<a href="https://wa.me/918555948572" class="float-btn whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="tel:8712944996" class="float-btn call" aria-label="Call Now">
+    <i class="fas fa-phone"></i>
+</a>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.testimonial-slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            arrows: false,
+            dots: false,          /* DOTS COMPLETELY REMOVED */
+            infinite: true,
+            responsive: [
+                { breakpoint: 992, settings: { slidesToShow: 2 } },
+                { breakpoint: 600, settings: { slidesToShow: 1 } }
+            ]
+        });
+    });
+</script>
+<script>
+// Reveal sections on scroll
+function revealOnScroll() {
+    const sections = document.querySelectorAll('#about, #brands, #services, .process, .counters, .testimonials, .contact, footer');
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+            section.classList.add('visible');
+        }
+    });
+}
+
+// Run on scroll and on load
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+</body>
+
+</html>
+
+
